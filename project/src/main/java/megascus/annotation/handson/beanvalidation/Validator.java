@@ -4,10 +4,6 @@ import megascus.annotation.handson.example.Book;
 import java.lang.reflect.Field;
 import java.text.MessageFormat;
 
-/**
- *
- * @author 2568
- */
 public class Validator {
     
     public static void main(String... args) {
@@ -23,13 +19,13 @@ public class Validator {
         validate(book);
     }
     static void validate(Object obj) {
-        Field[] fields = obj.getClass().getDeclaredFields();
+        Field[] fields = obj.getClass().getDeclaredFields(); // クラスについているフィールドの一覧を取得する
         for (Field field : fields) {
-            NotNull notNull = field.getAnnotation(NotNull.class);
+            NotNull notNull = field.getAnnotation(NotNull.class); // フィールドにNotNullアノテーションがついていたら
             if(notNull != null) {
                 try {
-                    field.setAccessible(true);
-                    if(field.get(obj) == null) {
+                    field.setAccessible(true); // privateフィールドにアクセスするために必須
+                    if(field.get(obj) == null) { // NotNullがついているフィールドの値がnullだったらExceptionを発生させる
                         throw new NullPointerException(MessageFormat.format(notNull.message(),field.getName()));
                     }
                 } catch (IllegalArgumentException | IllegalAccessException ex) {

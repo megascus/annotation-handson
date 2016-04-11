@@ -2,10 +2,6 @@ package megascus.annotation.handson.pattern;
 
 import java.util.Locale;
 
-/**
- *
- * @author 2568
- */
 public class CalendarFactory {
     
     public Calendar getInstance(Locale locale) {

@@ -6,10 +6,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import megascus.annotation.handson.example.ExecutableImpl;
 
-/**
- *
- * @author 2568
- */
 public class ProxyMain {
 
     public static void main(String... args) {
