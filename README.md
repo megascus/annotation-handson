@@ -28,6 +28,7 @@ https://netbeans.org/downloads/?pagelang=ja
 #アジェンダ
 以下の通り行う予定です。
 
+- プロジェクト作成(事前準備)
 - リフレクションを使用したプログラミング
 - よく使うデザインパターン
  - Factoryパターン
